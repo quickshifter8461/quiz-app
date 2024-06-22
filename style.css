@@ -1,0 +1,54 @@
+body{
+    height: 100vh;
+    background: url(/images/premium_photo-1678103472972-1cb2faa9fba9.avif);
+    background-repeat: no-repeat;
+    background-size:100%;
+    font-family: "Oswald", sans-serif !important;
+    user-select: none;
+}
+
+.container{
+    max-width: 100%;
+    height: 100%;  
+}
+
+.quiz-container{
+    width: 540px;
+}
+
+input[type=radio]{
+    width: 30px;
+    height: 30px;
+  }
+
+  #result{
+    display: none;
+  }
+
+  .win-img{
+    width: 540px;
+    height: 540px;
+    background: url(images/win-best.gif);
+    background-size: contain;
+  }
+
+  .fail-img{
+    width: 540px;
+    height: 540px;
+    background: url(images/never-give-up-new-game.gif);
+    background-size: contain;
+  }
+
+  .spaceing{
+    text-shadow: -4px 3px black, 1px 1px  black, 1px 1px black;
+    padding-top: 120px;
+    padding-bottom: 110px;
+    color: white;
+  }
+
+  .failure{
+    color: black;
+    text-shadow: none;
+    padding-top: 0;
+    padding-bottom: 280px;
+  }
