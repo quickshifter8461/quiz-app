@@ -55,14 +55,14 @@ input[type=radio]{
   }
 
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 600px){
     .win-img,
     .fail-img {
         width: 100%;
         background-repeat: no-repeat;
     }
     .spaceing {
-      padding-top: 350px;
+      padding-top: 380px;
     padding-bottom: 20px;
     text-shadow: none;
     color: black;
