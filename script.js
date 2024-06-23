@@ -136,6 +136,7 @@ submitBtn.addEventListener("click", () => {
     if (currentQuestion < quizData.length) {
       loadQuestion();
     } else {
+      // checking user win or loss 
       if (score < 5) {
         result.classList.add("fail-img")
         scoreEl.classList.add("failure")
