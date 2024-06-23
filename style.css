@@ -2,14 +2,15 @@ body{
     height: 100vh;
     background: url(/images/premium_photo-1678103472972-1cb2faa9fba9.avif);
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size:cover;
     font-family: "Oswald", sans-serif !important;
     user-select: none;
 }
 
 .container{
-    max-width: 100%;
-    height: 100%;  
+    width: 600px;
+    height: 100%;
+     
 }
 
 .quiz-container{
@@ -51,4 +52,22 @@ input[type=radio]{
     text-shadow: none;
     padding-top: 0;
     padding-bottom: 280px;
+  }
+
+
+  @media only screen and (max-width: 768px){
+    .win-img,
+    .fail-img {
+        width: 100%;
+        background-repeat: no-repeat;
+    }
+    .spaceing {
+      padding-top: 350px;
+    padding-bottom: 20px;
+    text-shadow: none;
+    color: black;
+  }
+  #restart{
+    width: 100% !important;
+  }
   }
