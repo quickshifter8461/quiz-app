@@ -1,3 +1,14 @@
+const quiz = document.getElementById("quiz"); // container to display questions
+const answersEls = document.querySelectorAll(".answer"); // container to display options
+const questionEl = document.getElementById("question"); // question h2
+const a_text = document.getElementById("a_text"); //options
+const b_text = document.getElementById("b_text");
+const c_text = document.getElementById("c_text");
+const d_text = document.getElementById("d_text");
+const submitBtn = document.getElementById("submit"); //submit btn
+const result = document.getElementById("result"); //container to display result
+const scoreEl = document.getElementById("score"); //score h1
+const restartBtn = document.getElementById("restart"); //restart btn
 // quiz Questions
 const quizData = [
   {
@@ -82,31 +93,21 @@ const quizData = [
   },
 ];
 
-const quiz = document.getElementById("quiz"); // container to display questions
-const answersEls = document.querySelectorAll(".answer"); // container to display options
-const questionEl = document.getElementById("question"); // question h2
-const a_text = document.getElementById("a_text"); //options
-const b_text = document.getElementById("b_text");
-const c_text = document.getElementById("c_text");
-const d_text = document.getElementById("d_text");
-const submitBtn = document.getElementById("submit"); //submit btn
-const result = document.getElementById("result"); //container to display result
-const scoreEl = document.getElementById("score"); //score h1
-const restartBtn = document.getElementById("restart"); //restart btn
 
-let currentQuiz = 0;
+
+let currentQuestion = 0;
 let score = 0;
 
-loadQuiz();
+loadQuestion();
 // loading questions
-function loadQuiz() {
+function loadQuestion() {
   deselectAnswers();
-  const currentQuizData = quizData[currentQuiz];
-  questionEl.innerText = currentQuizData.question;
-  a_text.innerText = currentQuizData.a;
-  b_text.innerText = currentQuizData.b;
-  c_text.innerText = currentQuizData.c;
-  d_text.innerText = currentQuizData.d;
+  const currentQuestionData = quizData[currentQuestion];
+  questionEl.innerText = currentQuestionData.question;
+  a_text.innerText = currentQuestionData.a;
+  b_text.innerText = currentQuestionData.b;
+  c_text.innerText = currentQuestionData.c;
+  d_text.innerText = currentQuestionData.d;
 }
 // deselecting answers
 function deselectAnswers() {
@@ -126,14 +127,14 @@ function getSelected() {
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
   if (answer) {
-    if (answer === quizData[currentQuiz].correct) {
+    if (answer === quizData[currentQuestion].correct) {
       score++;
     }
 
-    currentQuiz++;
+    currentQuestion++;
 
-    if (currentQuiz < quizData.length) {
-      loadQuiz();
+    if (currentQuestion < quizData.length) {
+      loadQuestion();
     } else {
       if (score < 5) {
         result.classList.add("fail-img")
@@ -151,9 +152,9 @@ submitBtn.addEventListener("click", () => {
 });
 // restart function
 restartBtn.addEventListener("click", () => {
-  currentQuiz = 0;
+  currentQuestion = 0;
   score = 0;
   quiz.style.display = "block";
   result.style.display = "none";
-  loadQuiz();
+  loadQuestion();
 });
